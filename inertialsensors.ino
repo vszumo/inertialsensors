@@ -1,10 +1,20 @@
 #include "Zumo32U4Gyro.h"
+#include "Zumo32U4Acc.h"
 
 /*
-Initialiseer imu object en maak gyro object aan met imu als parameter.
+Initialiseer imu object.
 */
 Zumo32U4IMU imu;
+
+/*
+Maak gyroscoop object aan met imu als parameter.
+*/
 Zumo32U4Gyro gyro(imu);
+
+/*
+Maak accelerometer object aan met imu als parameter.
+*/
+Zumo32U4Acc acc(imu);
 
 void setup() {
   /*
@@ -14,7 +24,7 @@ void setup() {
   Serial.println("Starting VSZumo software");
 
   /*
-  Constroleer of de gyro status al true is.
+  Constroleer of de gyroscoop status al true is.
   */
   if (!gyro.getStatus()) {
     /*
@@ -30,6 +40,23 @@ void setup() {
     }
   }
 
+  /*
+  Constroleer of de accelerometer status al true is.
+  */
+  if (!acc.getStatus()) {
+    /*
+    Stel accelerometer in en controleer uitkomst.
+    */
+    if (!acc.setup()) {
+      while(true) {
+        Serial.println("Zumo Accelerometer failed to initialize.");
+        delay(1000);
+      }
+    } else {
+      Serial.println("Zumo Accelerometer initialized.");
+    }
+  }
+
 }
 
 void loop() {
@@ -40,5 +67,14 @@ void loop() {
   Serial.print(", ");
   Serial.println(gyro.getZ());
   Serial.println("");
+
+  Serial.println("Accelerometer x,y,z");
+  Serial.print(acc.getX());
+  Serial.print(", ");
+  Serial.print(acc.getY());
+  Serial.print(", ");
+  Serial.println(acc.getZ());
+  Serial.println("");
+
   delay(1000);
 }
