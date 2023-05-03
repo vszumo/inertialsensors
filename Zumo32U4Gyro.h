@@ -1,4 +1,4 @@
-#include <Zumo32U4.h>
+#include <Zumo32U4IMU.h>
 
 /*
 Definieer Zumo32U4Gyro klasse
