@@ -33,6 +33,16 @@ class Zumo32U4Acc
     int16_t getZ() const;
 
     /*
+    Geeft terug of de robot ondersteboven staat.
+    */
+    bool getOndersteboven() const;
+
+    /*
+    Geeft terug of de robot gekanteld is.
+    */
+    bool getGekanteld() const;
+
+    /*
     Geeft de status van de accelerometer terug.
     */
     bool getStatus() const;
