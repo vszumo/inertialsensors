@@ -1,16 +1,16 @@
 #include <Zumo32U4IMU.h>
 
 /*
-Definieer Zumo32U4Accelerometer klasse
+Definieer Zumo32U4Acc accelerometer klasse
 */
-class Zumo32U4Accelerometer
+class Zumo32U4Acc
 {
   public:
 
     /*
     Construeer een Zumo32U4 accelerometer object met imu als parameter.
     */
-    Zumo32U4Accelerometer(Zumo32U4IMU);
+    Zumo32U4Acc(Zumo32U4IMU);
 
     /*
     Stel accelerometer in om deze klaar voor gebruik te maken.
