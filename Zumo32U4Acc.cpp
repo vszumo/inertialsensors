@@ -73,7 +73,7 @@ bool Zumo32U4Acc::getOndersteboven() const {
 
 /*
 Roep read() aan en geef aan of de robot gekanteld is.
-De robot wordt beschouwd als gekanteld als de zWaarde tussen de -2000 en 2000 ligt ligt.
+De robot wordt beschouwd als gekanteld als de zWaarde tussen de -2000 en 2000 ligt.
 */
 bool Zumo32U4Acc::getGekanteld() const {
   read();
