@@ -3,7 +3,7 @@
 #include "Zumo32U4Gyro.h"
 
 /*
-Construct de Zumo32U4 Gyro klasse:
+Construct de Zumo32U4Gyro gyroscoop klasse:
 - imu parameter op te slaan.
 - klaar bepalen en opslaan.
 - standaard waardes opslaan.

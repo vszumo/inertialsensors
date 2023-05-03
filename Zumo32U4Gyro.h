@@ -1,7 +1,7 @@
 #include <Zumo32U4IMU.h>
 
 /*
-Definieer Zumo32U4Gyro klasse
+Definieer Zumo32U4Gyro gyroscoop klasse
 */
 class Zumo32U4Gyro
 {
