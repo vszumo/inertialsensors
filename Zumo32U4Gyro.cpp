@@ -10,7 +10,6 @@ Construct de Zumo32U4 Gyro klasse:
 */
 Zumo32U4Gyro::Zumo32U4Gyro(Zumo32U4IMU zumoimu):imu(zumoimu)
 {
-  Wire.begin();
   klaar = false;
 
   if (imu.getType() != Zumo32U4IMUType::Unknown) {
@@ -30,6 +29,7 @@ bool Zumo32U4Gyro::setup() {
     return false;
   }
 
+  Wire.begin();
   if (!imu.init()) {
     return false;
   }
