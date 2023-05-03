@@ -33,6 +33,11 @@ class Zumo32U4Gyro
     int16_t getZ() const;
 
     /*
+    Geeft terug of de robot aan het draaien is.
+    */
+    bool getDraaiend() const;
+
+    /*
     Geeft de status van de gyroscoop terug.
     */
     bool getStatus() const;

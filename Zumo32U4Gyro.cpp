@@ -63,6 +63,15 @@ int16_t Zumo32U4Gyro::getZ() const {
 }
 
 /*
+Roep read() aan en geef aan of de robot aan het draaien is.
+De robot wordt beschouwd als draaiend als de zWaarde onder de -1000 of boven de 1000 ligt.
+*/
+bool Zumo32U4Gyro::getDraaiend() const {
+  read();
+  return zWaarde < -1000 || zWaarde > 1000;
+}
+
+/*
 Geef de klaar waarde terug.
 */
 bool Zumo32U4Gyro::getStatus() const {

@@ -80,7 +80,6 @@ bool Zumo32U4Acc::getGekanteld() const {
   return zWaarde > -2000 && zWaarde < 2000;
 }
 
-
 /*
 Geef de klaar waarde terug.
 */
