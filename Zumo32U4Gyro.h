@@ -1,4 +1,3 @@
-#include "Zumo32U4IMU.h"
 #include <Zumo32U4.h>
 
 /*
@@ -69,6 +68,5 @@ class Zumo32U4Gyro
     Functie om de nieuwste waardes uit te lezen en op te slaan.
     */
     void read();
-
 
 };
