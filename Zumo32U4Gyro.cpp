@@ -20,9 +20,7 @@ Zumo32U4Gyro::Zumo32U4Gyro(Zumo32U4IMU zumoimu):imu(zumoimu)
   zWaarde = 0;
 }
 
-/*
-Stel de gyroscoop in door de imu te initialiseren en daarna klaar op te slaan.
-*/
+// Stel de gyroscoop in door de imu te initialiseren en daarna klaar op te slaan.
 bool Zumo32U4Gyro::setup() {
   if (klaar) {
     return false;
@@ -37,25 +35,19 @@ bool Zumo32U4Gyro::setup() {
   return true;
 }
 
-/*
-Roep read() aan en geef de x waarde terug.
-*/
+// Roep read() aan en geef de x waarde terug.
 int16_t Zumo32U4Gyro::getX() const {
   read();
   return xWaarde;
 }
 
-/*
-Roep read() aan en geef de y waarde terug.
-*/
+// Roep read() aan en geef de y waarde terug.
 int16_t Zumo32U4Gyro::getY() const {
   read();
   return yWaarde;
 }
 
-/*
-Roep read() aan en geef de z waarde terug.
-*/
+// Roep read() aan en geef de z waarde terug.
 int16_t Zumo32U4Gyro::getZ() const {
   read();
   return zWaarde;
@@ -70,16 +62,12 @@ bool Zumo32U4Gyro::getDraaiend() const {
   return zWaarde < -1000 || zWaarde > 1000;
 }
 
-/*
-Geef de klaar waarde terug.
-*/
+// Geef de klaar waarde terug.
 bool Zumo32U4Gyro::getStatus() const {
   return klaar;
 }
 
-/*
-Lees de nieuwste waardes uit de imu en sla deze op.
-*/
+// Lees de nieuwste waardes uit de imu en sla deze op.
 void Zumo32U4Gyro::read() {
   imu.readGyro();
   xWaarde = imu.g.x;

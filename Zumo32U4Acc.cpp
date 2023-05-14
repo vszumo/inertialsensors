@@ -20,9 +20,7 @@ Zumo32U4Acc::Zumo32U4Acc(Zumo32U4IMU zumoimu):imu(zumoimu)
   zWaarde = 0;
 }
 
-/*
-Stel de accelerometer in door de imu te initialiseren en daarna klaar op te slaan.
-*/
+// Stel de accelerometer in door de imu te initialiseren en daarna klaar op te slaan.
 bool Zumo32U4Acc::setup() {
   if (klaar) {
     return false;
@@ -37,25 +35,19 @@ bool Zumo32U4Acc::setup() {
   return true;
 }
 
-/*
-Roep read() aan en geef de x waarde terug.
-*/
+// Roep read() aan en geef de x waarde terug.
 int16_t Zumo32U4Acc::getX() const {
   read();
   return xWaarde;
 }
 
-/*
-Roep read() aan en geef de y waarde terug.
-*/
+// Roep read() aan en geef de y waarde terug.
 int16_t Zumo32U4Acc::getY() const {
   read();
   return yWaarde;
 }
 
-/*
-Roep read() aan en geef de z waarde terug.
-*/
+// Roep read() aan en geef de z waarde terug.
 int16_t Zumo32U4Acc::getZ() const {
   read();
   return zWaarde;
@@ -79,16 +71,12 @@ bool Zumo32U4Acc::getGekanteld() const {
   return zWaarde > -2000 && zWaarde < 2000;
 }
 
-/*
-Geef de klaar waarde terug.
-*/
+// Geef de klaar waarde terug.
 bool Zumo32U4Acc::getStatus() const {
   return klaar;
 }
 
-/*
-Lees de nieuwste waardes uit de imu en sla deze op.
-*/
+// Lees de nieuwste waardes uit de imu en sla deze op.
 void Zumo32U4Acc::read() {
   imu.readAcc();
   xWaarde = imu.a.x;

@@ -1,82 +1,52 @@
 #include <Zumo32U4IMU.h>
 
-/*
-Definieer Zumo32U4Acc accelerometer klasse
-*/
+// Definieer Zumo32U4Acc accelerometer klasse
 class Zumo32U4Acc
 {
   public:
 
-    /*
-    Construeer een Zumo32U4 accelerometer object met imu als parameter.
-    */
+    // Construeer een Zumo32U4 accelerometer object met imu als parameter.
     Zumo32U4Acc(Zumo32U4IMU);
 
-    /*
-    Stel accelerometer in om deze klaar voor gebruik te maken.
-    */
+    // Stel accelerometer in om deze klaar voor gebruik te maken.
     bool setup();
 
-    /*
-    Geeft de x waarde van de accelerometer terug.
-    */
+    // Geeft de x waarde van de accelerometer terug.
     int16_t getX() const;
 
-    /*
-    Geeft de y waarde van de accelerometer terug.
-    */
+    // Geeft de y waarde van de accelerometer terug.
     int16_t getY() const;
 
-    /*
-    Geeft de z waarde van de accelerometer terug.
-    */
+    // Geeft de z waarde van de accelerometer terug.
     int16_t getZ() const;
 
-    /*
-    Geeft terug of de robot ondersteboven staat.
-    */
+    // Geeft terug of de robot ondersteboven staat.
     bool getOndersteboven() const;
 
-    /*
-    Geeft terug of de robot gekanteld is.
-    */
+    // Geeft terug of de robot gekanteld is.
     bool getGekanteld() const;
 
-    /*
-    Geeft de status van de accelerometer terug.
-    */
+    // Geeft de status van de accelerometer terug.
     bool getStatus() const;
 
   private:
 
-    /*
-    Imu parameter die nodig is om de fysieke accelerometer uit te lezen.
-    */
+    // Imu parameter die nodig is om de fysieke accelerometer uit te lezen.
     Zumo32U4IMU imu;
 
-    /*
-    X waarde van de accelerometer.
-    */
+    // X waarde van de accelerometer.
     int16_t xWaarde;
 
-    /*
-    Y waarde van de accelerometer.
-    */
+    // Y waarde van de accelerometer.
     int16_t yWaarde;
 
-    /*
-    Z waarde van de accelerometer.
-    */
+    // Z waarde van de accelerometer.
     int16_t zWaarde;
 
-    /*
-    Waarde die status van de accelerometer bijhoudt.
-    */
+    // Waarde die status van de accelerometer bijhoudt.
     bool klaar;
 
-    /*
-    Functie om de nieuwste waardes uit te lezen en op te slaan.
-    */
+    // Functie om de nieuwste waardes uit te lezen en op te slaan.
     void read();
 
 };

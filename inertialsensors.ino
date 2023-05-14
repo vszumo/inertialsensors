@@ -2,40 +2,27 @@
 #include "Zumo32U4Acc.h"
 #include "Zumo32U4Mag.h"
 
-/*
-Initialiseer imu object.
-*/
+
+// Initialiseer imu object.
 Zumo32U4IMU imu;
 
-/*
-Maak gyroscoop object aan met imu als parameter.
-*/
+// Maak gyroscoop object aan met imu als parameter.
 Zumo32U4Gyro gyro(imu);
 
-/*
-Maak accelerometer object aan met imu als parameter.
-*/
+// Maak accelerometer object aan met imu als parameter.
 Zumo32U4Acc acc(imu);
 
-/*
-Maak magnetometer object aan met imu als parameter.
-*/
+// Maak magnetometer object aan met imu als parameter.
 Zumo32U4Mag mag(imu);
 
 void setup() {
-  /*
-  Start seriele verbinding en print iets naar de console.
-  */
+  // Start seriele verbinding en print iets naar de console.
   Serial.begin(9600);
   Serial.println("Starting VSZumo software");
 
-  /*
-  Constroleer of de gyroscoop status al true is.
-  */
+  // Constroleer of de gyroscoop status al true is.
   if (!gyro.getStatus()) {
-    /*
-    Stel gyroscoop in en controleer uitkomst.
-    */
+    // Stel gyroscoop in en controleer uitkomst.
     if (!gyro.setup()) {
       while(true) {
         Serial.println("Zumo Gyroscope failed to initialize.");
@@ -46,13 +33,9 @@ void setup() {
     }
   }
 
-  /*
-  Constroleer of de accelerometer status al true is.
-  */
+  // Constroleer of de accelerometer status al true is.
   if (!acc.getStatus()) {
-    /*
-    Stel accelerometer in en controleer uitkomst.
-    */
+    // Stel accelerometer in en controleer uitkomst.
     if (!acc.setup()) {
       while(true) {
         Serial.println("Zumo Accelerometer failed to initialize.");
@@ -63,13 +46,9 @@ void setup() {
     }
   }
 
-  /*
-  Constroleer of de magnetometer status al true is.
-  */
+  //Constroleer of de magnetometer status al true is.
   if (!mag.getStatus()) {
-    /*
-    Stel magnetometer in en controleer uitkomst.
-    */
+    // Stel magnetometer in en controleer uitkomst.
     if (!mag.setup()) {
       while(true) {
         Serial.println("Zumo Magnetometer failed to initialize.");
@@ -83,9 +62,7 @@ void setup() {
 }
 
 void loop() {
-  /*
-  Print informatie over de gyroscoop naar de console.
-  */
+  // Print informatie over de gyroscoop naar de console.
   Serial.println("Gyroscope x,y,z");
   Serial.print(gyro.getX());
   Serial.print(", ");
@@ -95,9 +72,7 @@ void loop() {
   if (gyro.getDraaiend()) Serial.println("draaiend");
   Serial.println("");
 
-  /*
-  Print informatie over de accelerometer naar de console.
-  */
+  // Print informatie over de accelerometer naar de console.
   Serial.println("Accelerometer x,y,z");
   Serial.print(acc.getX());
   Serial.print(", ");
@@ -108,9 +83,7 @@ void loop() {
   if (acc.getOndersteboven()) Serial.println("ondersteboven");
   Serial.println("");
 
-  /*
-  Print informatie over de magnetometer naar de console.
-  */
+  // Print informatie over de magnetometer naar de console.
   Serial.println("Mag x,y,z");
   Serial.print(mag.getX());
   Serial.print(", ");
