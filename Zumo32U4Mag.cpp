@@ -22,14 +22,10 @@ Zumo32U4Mag::Zumo32U4Mag(Zumo32U4IMU zumoimu):imu(zumoimu)
 
 // Stel de magnetometer in door de imu te initialiseren en daarna klaar op te slaan.
 bool Zumo32U4Mag::setup() {
-  if (klaar) {
-    return false;
-  }
+  if (klaar) return false;
 
   Wire.begin();
-  if (!imu.init()) {
-    return false;
-  }
+  if (!imu.init()) return false;
 
   klaar = true;
   return true;

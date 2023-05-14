@@ -22,14 +22,10 @@ Zumo32U4Acc::Zumo32U4Acc(Zumo32U4IMU zumoimu):imu(zumoimu)
 
 // Stel de accelerometer in door de imu te initialiseren en daarna klaar op te slaan.
 bool Zumo32U4Acc::setup() {
-  if (klaar) {
-    return false;
-  }
+  if (klaar) return false;
 
   Wire.begin();
-  if (!imu.init()) {
-    return false;
-  }
+  if (!imu.init()) return false;
 
   klaar = true;
   return true;
